@@ -1,0 +1,12 @@
+[submodule "lib/gtest"]
+	path = lib/gtest
+	url = https://github.com/google/googletest
+[submodule "lib/inireader"]
+	path = lib/inireader
+	url = https://github.com/benhoyt/inih
+[submodule "lib/eigen"]
+	path = lib/eigen
+	url = https://github.com/eigenteam/eigen-git-mirror
+[submodule "lib/cppformat"]
+	path = lib/cppformat
+	url = https://github.com/fmtlib/fmt

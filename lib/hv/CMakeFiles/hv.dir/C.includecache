@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lucasmp/projects/elmoead_gpu/lib/hv/avl.c
+stdio.h
+-
+stdlib.h
+-
+errno.h
+-
+avl.h
+/home/lucasmp/projects/elmoead_gpu/lib/hv/avl.h
+
+/home/lucasmp/projects/elmoead_gpu/lib/hv/avl.h
+
+/home/lucasmp/projects/elmoead_gpu/lib/hv/hv.c
+hv.h
+/home/lucasmp/projects/elmoead_gpu/lib/hv/hv.h
+avl.h
+/home/lucasmp/projects/elmoead_gpu/lib/hv/avl.h
+stdlib.h
+-
+stdio.h
+-
+limits.h
+-
+float.h
+-
+
+/home/lucasmp/projects/elmoead_gpu/lib/hv/hv.h
+

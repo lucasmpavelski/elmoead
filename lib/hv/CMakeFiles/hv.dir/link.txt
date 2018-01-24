@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhv.a  CMakeFiles/hv.dir/hv.c.o CMakeFiles/hv.dir/avl.c.o
+/usr/bin/ranlib libhv.a
