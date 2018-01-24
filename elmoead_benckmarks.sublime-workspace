@@ -1,0 +1,1573 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Pr",
+				"Proteinpp"
+			],
+			[
+				"tmp",
+				"tmpname"
+			],
+			[
+				"in",
+				"include"
+			],
+			[
+				"result",
+				"result_fn"
+			],
+			[
+				"os",
+				"ostream"
+			],
+			[
+				"if",
+				"ifstream"
+			],
+			[
+				"resu",
+				"result_fn"
+			],
+			[
+				"res",
+				"result_fn"
+			],
+			[
+				"pro",
+				"protein"
+			],
+			[
+				"xyz",
+				"xyz_fn"
+			],
+			[
+				"re",
+				"remove_key_file"
+			],
+			[
+				"ke",
+				"key_fn"
+			],
+			[
+				"run",
+				"run_cmds"
+			],
+			[
+				"wi",
+				"width	Attr"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"force",
+				"forcefield_path"
+			],
+			[
+				"Pro",
+				"ProteinCmdEvaluator"
+			],
+			[
+				"fin",
+				"find_first_of"
+			],
+			[
+				"find_",
+				"find_last_of"
+			],
+			[
+				"find",
+				"find_first_of"
+			],
+			[
+				"cha",
+				"charmm_path"
+			],
+			[
+				"ana",
+				"analyze_exe"
+			],
+			[
+				"pr",
+				"protein_exe"
+			],
+			[
+				"bool",
+				"boolalpha"
+			],
+			[
+				"get",
+				"getResidues()	const ResiduesData &  const "
+			],
+			[
+				"protein",
+				"protein.h"
+			],
+			[
+				"ar",
+				"argc	int "
+			],
+			[
+				"c",
+				"wctrans(const char *__property)	wctrans_t "
+			],
+			[
+				"In",
+				"Individual	"
+			],
+			[
+				"objs",
+				"objs_container	int "
+			],
+			[
+				"io",
+				"iostream"
+			],
+			[
+				"lim_",
+				"lim_sup	double "
+			],
+			[
+				"impr",
+				"imprimeTipoDoTriangulo(int a, int b, int c)	void "
+			],
+			[
+				"ta",
+				"tabuada10()	void "
+			],
+			[
+				"tab",
+				"tabuada5()	void "
+			],
+			[
+				"nota",
+				"nota3	double "
+			],
+			[
+				"no",
+				"nota2	double "
+			],
+			[
+				"cal",
+				"calculadora()	void "
+			],
+			[
+				"calcula",
+				"calculaNotas()	void "
+			],
+			[
+				"imr",
+				"imprimeQuadrado()	void "
+			],
+			[
+				"escre",
+				"escreveNome()	void "
+			],
+			[
+				"function",
+				"cookie_read_function_t	"
+			],
+			[
+				"test",
+				"teste_super_primo	int "
+			],
+			[
+				"num",
+				"num_lido2	int "
+			],
+			[
+				"mmc_n",
+				"mmc_n2	int "
+			],
+			[
+				"mmc",
+				"mmc_n1	int "
+			],
+			[
+				"mm",
+				"mmc_n2	int "
+			],
+			[
+				"coef",
+				"coeff_linear	double "
+			],
+			[
+				"lim",
+				"lim_inferior	double "
+			],
+			[
+				"pont",
+				"pontos"
+			],
+			[
+				"y",
+				"y2"
+			],
+			[
+				"ca",
+				"cat2"
+			],
+			[
+				"cat",
+				"cat1"
+			],
+			[
+				"inc",
+				"include_dirs"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/test/test_all.cpp",
+			"settings":
+			{
+				"buffer_size": 557,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/test/stm_tests.h",
+			"settings":
+			{
+				"buffer_size": 4723,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/surrogate/aux/idexed.h",
+			"settings":
+			{
+				"buffer_size": 522,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/surrogate/aux/clock.h",
+			"settings":
+			{
+				"buffer_size": 1299,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/moead_surrogate.cpp",
+			"settings":
+			{
+				"buffer_size": 2481,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#include \"aux.h\"\n#include \"mo.h\"\n#include \"ml.h\"\n#include \"moead_algs.h\"\n#include \"surrogate.h\"\n#include \"estimated_problem.h\"\n\n#include \"format.h\"\n#include \"INIReader.h\"\n\nstruct ConfigurableTest {\n    using string = std::string;\n\n    long seed;\n    string config_fn, front_fn;\n    INIReader conf;\n\n    ConfigurableTest(int argc, char* argv[]);\n\n    template <class T>\n    void log(const T& v, const string& nm) { fmt::print(\"{} = {}\\n\", nm, v); }\n\n    long getl(const string& nm, const long& def)\n    {\n        auto v = conf.GetInteger(\"\", nm, def);\n        log(v, nm);\n        return v;\n    }\n    double getd(const string& nm, const double& def)\n    {\n        auto v = conf.GetReal(\"\", nm, def);\n        log(v, nm);\n        return v;\n    }\n    string gets(const string& nm, const string& def)\n    {\n        auto v = conf.Get(\"\", nm, def);\n        log(v, nm);\n        return v;\n    }\n    bool getb(const string& nm, const bool& def)\n    {\n        auto v = conf.GetBoolean(\"\", nm, def);\n        log(v, nm);\n        return v;\n    }\n\n    size_t noTrainPartitions(size_t no_vars, size_t no_objs, WeightSet<>::Type wt);\n\n    MOProblem* getProblem();\n    OperatorSelection<DEOperator> getDEOperators();\n    MOEAD* getMOEAD(size_t no_vars, size_t no_objs);\n    std::vector<RegELM> getELMs(const MOProblem& prob);\n    ELMOEAD getELMOEAD(MOProblem& prob, MOEAD& moead);\n    PopulationCallback getCallback();\n};\n",
+			"file": "src/surrogate/configurable_test.h",
+			"file_size": 1443,
+			"file_write_time": 130951011503633922,
+			"settings":
+			{
+				"buffer_size": 1403,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/surrogate/configurable_test.cpp",
+			"settings":
+			{
+				"buffer_size": 5522,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Makefile/Make.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/clang.sublime-build",
+					""
+				],
+				[
+					"Packages/User/clang.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Vintageous/Vintageous.sublime-build",
+					""
+				],
+				[
+					"Packages/Vintageous/Vintageous.sublime-build",
+					"Vintageous - Test (All)"
+				],
+				[
+					"Packages/Vintageous/Vintageous.sublime-build",
+					"Vintageous - Test (This File Only)"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/clang.sublime-build",
+					""
+				],
+				[
+					"Packages/User/clang.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/untitled.sublime-build",
+					""
+				],
+				[
+					"Packages/User/untitled.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/Vintageous/Vintageous.sublime-build",
+					""
+				],
+				[
+					"Packages/Vintageous/Vintageous.sublime-build",
+					"Vintageous - Test (All)"
+				],
+				[
+					"Packages/Vintageous/Vintageous.sublime-build",
+					"Vintageous - Test (This File Only)"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"elm-moead-surrogate - all",
+					""
+				],
+				[
+					"elm-moead-surrogate - clean",
+					""
+				],
+				[
+					"elm-moead-surrogate - main",
+					""
+				],
+				[
+					"elm-moead-surrogate - main/fast",
+					""
+				],
+				[
+					"elm-moead-surrogate - moead",
+					""
+				],
+				[
+					"elm-moead-surrogate - moead/fast",
+					""
+				],
+				[
+					"elm-moead-surrogate - rebuild_cache",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"elm-moead-surrogate - all",
+				""
+			]
+		],
+		[
+			[
+				[
+					"elm-moead-surrogate - all",
+					""
+				],
+				[
+					"elm-moead-surrogate - clean",
+					""
+				],
+				[
+					"elm-moead-surrogate - main",
+					""
+				],
+				[
+					"elm-moead-surrogate - main/fast",
+					""
+				],
+				[
+					"elm-moead-surrogate - moead",
+					""
+				],
+				[
+					"elm-moead-surrogate - moead/fast",
+					""
+				],
+				[
+					"elm-moead-surrogate - rebuild_cache",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"elm-moead-surrogate - all",
+					""
+				],
+				[
+					"elm-moead-surrogate - clean",
+					""
+				],
+				[
+					"elm-moead-surrogate - main",
+					""
+				],
+				[
+					"elm-moead-surrogate - main/fast",
+					""
+				],
+				[
+					"elm-moead-surrogate - rebuild_cache",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"elm-moead-surrogate - main",
+				""
+			]
+		],
+		[
+			[
+				[
+					"elm-moead-surrogate - all",
+					""
+				],
+				[
+					"elm-moead-surrogate - clean",
+					""
+				],
+				[
+					"elm-moead-surrogate - main",
+					""
+				],
+				[
+					"elm-moead-surrogate - main/fast",
+					""
+				],
+				[
+					"elm-moead-surrogate - rebuild_cache",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"elm-moead-surrogate - main",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 96.0,
+		"last_filter": "set syntax c++",
+		"selected_items":
+		[
+			[
+				"set syntax c++",
+				"Set Syntax: C++"
+			],
+			[
+				"lint err",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"ctags",
+				"CTags: Rebuild Tags"
+			],
+			[
+				"lint ca",
+				"SublimeLinter: Clear Caches"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"lint this",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"linter",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"projec",
+				"Project: Edit"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"clang form",
+				"Clang Format: Select Style"
+			],
+			[
+				"clangforma",
+				"Clang Format: Select Style"
+			],
+			[
+				"format",
+				"Clang Format: Format Selection"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"previ",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mark prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"pan",
+				"Pandoc"
+			],
+			[
+				"pando",
+				"Pandoc"
+			],
+			[
+				"mark previ",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"set synta mar",
+				"Set Syntax: Markdown GFM"
+			],
+			[
+				"table",
+				"Table Editor: Enable for current syntax"
+			],
+			[
+				"set syntax mar",
+				"Set Syntax: Markdown GFM"
+			],
+			[
+				"set c++",
+				"Set Syntax: C++"
+			],
+			[
+				"set synta c++",
+				"Set Syntax: C++"
+			],
+			[
+				"clangcom",
+				"Set Syntax: ClangCompleteErrorPanel"
+			],
+			[
+				"",
+				"Build With: Make"
+			],
+			[
+				"toogle",
+				"Vintageous: Toggle"
+			],
+			[
+				"vinnta",
+				"Vintageous: Open .vintageousrc"
+			],
+			[
+				"mar",
+				"Preferences: MarkdownEditing Settings – Default"
+			],
+			[
+				"mark",
+				"MarkdownEditing: Fix Underlined Headers"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"theme",
+				"SublimeLinter: Choose Gutter Theme"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"erro",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"make",
+				"Build With: Make"
+			]
+		],
+		"width": 602.0
+	},
+	"console":
+	{
+		"height": 274.0,
+		"history":
+		[
+			"print \"hellp\"",
+			"ls",
+			"show_symbols",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/lucasmp/projects/elmoead_benchmarks",
+		"/home/lucasmp/projects/elmoead_benchmarks/src",
+		"/home/lucasmp/projects/elmoead_benchmarks/src/surrogate",
+		"/home/lucasmp/projects/elmoead_benchmarks/src/surrogate/aux",
+		"/home/lucasmp/projects/elmoead_benchmarks/src/surrogate/moead",
+		"/home/lucasmp/projects/elmoead_benchmarks/src/test"
+	],
+	"file_history":
+	[
+		"/home/lucasmp/projects/elmoead_benchmarks/CMakeLists.txt",
+		"/home/lucasmp/projects/elmoead_benchmarks/src/test/moead_tests.h",
+		"/home/lucasmp/projects/elmoead_benchmarks/src/test/test_all.h",
+		"/home/lucasmp/projects/elmoead_benchmarks/src/test/train_archive_tests.h",
+		"/home/lucasmp/projects/elmoead_benchmarks/README",
+		"/home/lucasmp/projects/elmoead_benchmarks/lib/gtest-1.7.0/fused-src/gtest/gtest_main.cc",
+		"/home/lucasmp/projects/elmoead_benchmarks/src/test/sliding_window_tests.h",
+		"/home/lucasmp/projects/elmoead_benchmarks/src/test/benchmarks_tests.h",
+		"/home/lucasmp/projects/elmoead_benchmarks/src/surrogate/moead/moead_de.h",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/src/Energies.cpp",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/include/Energies.h",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/proteinEval4JavaCdl.sublime-project",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/src/protein.cpp",
+		"/home/lucasmp/projects/elmoead_benchmarks/src/moead_surrogate.cpp",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/src/proteinEval4Java.cpp",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/include/ProteinCmdEvaluator.h",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/CMakeLists.txt",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/src/ProteinCmdEvaluator.cpp",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/C++.sublime-settings",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/src/main.cpp",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/include/protein.h",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/.clang-format",
+		"/home/lucasmp/.config/sublime-text-3/Packages/ClangAutoComplete/ClangAutoComplete.sublime-settings",
+		"/home/lucasmp/.config/sublime-text-3/Packages/ClangComplete/ClangComplete.sublime-settings",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/ClangComplete.sublime-settings",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/include/main.h",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/include/aux.h",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/lucasmp/Desktop/unicentro/redes/redes - slides/aula_cabeamento.html",
+		"/home/lucasmp/Desktop/unicentro/redes/aulas.md/Aula 13: Meios de transmissão.md",
+		"/home/lucasmp/Desktop/unicentro/redes/aulas.md/Aula 14: Cabeamento estruturado.md",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/src/ProteinEvaluator.cpp",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/include/ProteinEvaluator.h",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/src/aux/io.cpp",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/include/aux/io.h",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+		"/home/lucasmp/Desktop/unicentro/redes/aulas.md/Aula 13: Meios de transmissão.html",
+		"/home/lucasmp/Desktop/unicentro/redes/redes - slides/aula_meios.html",
+		"/home/lucasmp/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
+		"/home/lucasmp/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/home/lucasmp/Desktop/unicentro/prog/aula53/aula52.tex",
+		"/home/lucasmp/Desktop/unicentro/prog/aula49/aula48.tex",
+		"/home/lucasmp/Desktop/unicentro/prog/aula52/aula51.tex",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/include/PSP.h",
+		"/home/lucasmp/Desktop/unicentro/redes - questoes/aula_meios.html",
+		"/home/lucasmp/Desktop/unicentro/redes - questoes/aula_10.html",
+		"/home/lucasmp/Desktop/unicentro/prog/aula51/aula51.tex",
+		"/home/lucasmp/projects/test/test.cpp",
+		"/home/lucasmp/projects/proteinEval4JavaCdl/include/proteinEval4Java.h",
+		"/home/lucasmp/Desktop/unicentro/prog/aula48/aula48.tex",
+		"/home/lucasmp/Desktop/unicentro/prog/aula47/aula47.tex",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/clang.sublime-build",
+		"/home/lucasmp/Desktop/unicentro/redes/aulas.md/Aula 11: A Camada Física (sinais e meios).md",
+		"/home/lucasmp/Desktop/unicentro/redes - questoes/aula10.html",
+		"/home/lucasmp/Desktop/unicentro/redes/aulas.md/prova1/conteudo.md",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/.vintageousrc",
+		"/home/lucasmp/Desktop/unicentro/redes/aulas.md/Aula 11: A Camada Fìsica (sinais e meios).md",
+		"/home/lucasmp/Desktop/unicentro/redes/aulas.md/Aula 8: Equipamentos de redes.md",
+		"/home/lucasmp/Área de Trabalho/unicentro/aula6.md",
+		"/home/lucasmp/Área de Trabalho/unicentro/prog/aula42/aula42.tex",
+		"/home/lucasmp/Área de Trabalho/unicentro/prog/aula43/aula42.tex",
+		"/home/lucasmp/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/lucasmp/projects/elm-moead-surrogate/elm-moead-surrogate.sublime-project",
+		"/home/lucasmp/Área de Trabalho/Minicurso: Introdução à Linguagem CUDA.md",
+		"/home/lucasmp/.config/sublime-text-3/Packages/MarkdownEditing/Markdown.sublime-settings",
+		"/home/lucasmp/Área de Trabalho/Minicurso: Introdu",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/lstinline.sublime-snippet",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/LaTeX.sublime-settings",
+		"/home/lucasmp/Área de Trabalho/unicentro/prog/aula41/aula41.tex",
+		"/home/lucasmp/projects/elm-moead-surrogate/libmoead/CMakeLists.txt",
+		"/home/lucasmp/projects/elm-moead-surrogate/libmoead/population.h",
+		"/home/lucasmp/projects/elm-moead-surrogate/main/main.cpp",
+		"/home/lucasmp/Área de Trabalho/aula5.md",
+		"/home/lucasmp/Área de Trabalho/unicentro/prog/aula41/aula41.vrb",
+		"/home/lucasmp/projects/elm-moead-surrogate/libmoead/moead.cpp",
+		"/home/lucasmp/projects/elm-moead-surrogate/libmoead/moead.h",
+		"/home/lucasmp/projects/elm-moead-surrogate/main/CMakeLists.txt",
+		"/home/lucasmp/projects/elm-moead-surrogate/CMakeLists.txt",
+		"/home/lucasmp/projects/elm-moead-surrogate/build.sh",
+		"/home/lucasmp/projects/elm-moead-surrogate/src/surrogate/mo/population.h",
+		"/home/lucasmp/projects/elm-moead-surrogate/libmoead/solution.cpp",
+		"/home/lucasmp/projects/elm-moead-surrogate/libmoead/solution.h",
+		"/home/lucasmp/Área de Trabalho/unicentro/prog/aula40/aula40.tex",
+		"/home/lucasmp/projects/codeblocks_test/main.c",
+		"/home/lucasmp/projects/codeblocks_test/lista5.c",
+		"/home/lucasmp/projects/codeblocks_test/main",
+		"/home/lucasmp/projects/codeblocks_test/lista1.c",
+		"/home/lucasmp/projects/codeblocks_test/lista2.c",
+		"/home/lucasmp/Downloads/hypervolume.tex",
+		"/home/lucasmp/.config/sublime-text-3/Packages/Alignment/Default (Linux).sublime-keymap",
+		"/home/lucasmp/Área de Trabalho/PLANOS.md",
+		"/home/lucasmp/projects/codeblocks_test/prova.c",
+		"/home/lucasmp/ZDTx.60.hyp.csv",
+		"/home/lucasmp/ZDTx.8.hyp.csv",
+		"/home/lucasmp/Downloads/data.csv",
+		"/home/lucasmp/.config/sublime-text-3/Packages/Terminal/Default (Linux).sublime-keymap",
+		"/home/lucasmp/.config/sublime-text-3/Packages/Terminal/Terminal.sublime-settings",
+		"/home/lucasmp/Área de Trabalho/PLANOS.markdown",
+		"/home/lucasmp/projects/codeblocks_test/lista4.c",
+		"/home/lucasmp/projects/codeblocks_test/cb.sublime-project",
+		"/home/lucasmp/projects/codeblocks_test/input.txt",
+		"/home/lucasmp/.config/sublime-text-3/Packages/Clang Format/Default (Linux).sublime-keymap",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/Shell Turtlestein.sublime-settings",
+		"/home/lucasmp/.config/sublime-text-3/Packages/Shell Turtlestein/Shell Turtlestein.sublime-settings",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/SublimeREPL.sublime-settings",
+		"/home/lucasmp/.config/sublime-text-3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/Terminal.sublime-settings",
+		"/home/lucasmp/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/Terminal (Linux).sublime-settings",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/Terminality.sublime-settings",
+		"/home/lucasmp/.config/sublime-text-3/Packages/Terminality/Terminality.sublime-settings",
+		"/home/lucasmp/projects/elmlib/elmlib.sublime-project",
+		"/home/lucasmp/projects/elmlib/include/reg_elm.h",
+		"/home/lucasmp/projects/elmlib/include/elm_common.h",
+		"/home/lucasmp/projects/elmlib/include/normalizers.h",
+		"/home/lucasmp/.config/sublime-text-3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/home/lucasmp/projects/test_st.cpp",
+		"/home/lucasmp/projects/elmlib/src/main.cpp",
+		"/home/lucasmp/projects/elmlib/CMakeLists.txt",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/JSON.sublime-settings",
+		"/home/lucasmp/.config/sublime-text-3/Packages/SublimeLinter/Default (Linux).sublime-keymap",
+		"/home/lucasmp/projects/elmlib/ctags_builder.sh",
+		"/home/lucasmp/.config/sublime-text-3/Packages/CTags/Default.sublime-keymap",
+		"/home/lucasmp/.config/sublime-text-3/Packages/User/Default (Linux).sublime-mousemap",
+		"/home/lucasmp/projects/elmlib/lib/eigen/Eigen/src/Cholesky/LDLT.h"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/home/lucasmp/projects/elm-moead-surrogate/main"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"strdup",
+			"getChiLowe",
+			"AngleType",
+			"---",
+			"s - c",
+			"l - c",
+			"568- ",
+			"ANSI/TIA /EIA",
+			"ANSI/TIA /EIA - 568 - A",
+			"ANSI/TIA/EIA-568 - B",
+			"ANSI/TIA/EIA-568- A",
+			"ANSI/TIA/EIA-569 - A",
+			"ANSI/TIA/EIA- ",
+			"ANSI/TIA/EIA- 568 - A",
+			"energi",
+			"ótica",
+			"par tra",
+			"foto-se",
+			"câmetr",
+			"tinker_exes_path",
+			"charmm_path",
+			"project",
+			"size",
+			")",
+			"- \\d\\)",
+			"- \\d)",
+			"•",
+			"cout",
+			"rand",
+			"main",
+			"inferior",
+			"printf",
+			"    ",
+			"Digite",
+			"teste_primo",
+			"í",
+			"á",
+			"ê",
+			"é",
+			"ú",
+			"*/\n",
+			"esta",
+			"multiplicidade",
+			" ",
+			"inapropriado",
+			"line",
+			"copy",
+			" ",
+			"auto_comple",
+			"auto",
+			"comment",
+			"selec"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"s-c",
+			"l-c",
+			"568-",
+			"ANSI/TIA/EIA",
+			"ANSI/TIA/EIA-568-A",
+			"ANSI/TIA/EIA-568-B",
+			"ANSI/TIA/EIA-569-A",
+			"ANSI/TIA/EIA-",
+			"ANSI/TIA/EIA-568-A",
+			"óptica",
+			"\\d\\)",
+			"i",
+			"a",
+			"e",
+			"u",
+			"distancia",
+			")\n",
+			"x2"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/test/test_all.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 557,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								279,
+								279
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/test/stm_tests.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4723,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								239,
+								239
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/surrogate/aux/idexed.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 522,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								320,
+								320
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/surrogate/aux/clock.h",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1299,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								393,
+								393
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 171.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/moead_surrogate.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2481,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								464,
+								464
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/surrogate/configurable_test.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1403,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72,
+								72
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 561.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/surrogate/configurable_test.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5522,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1982,
+								1982
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 714.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.clangcomplete":
+	{
+		"height": 27.0
+	},
+	"output.exec":
+	{
+		"height": 126.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mde":
+	{
+		"height": 112.0
+	},
+	"pinned_build_system": "",
+	"project": "elmoead_benckmarks.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"protein.cpp",
+				"src/protein.cpp"
+			],
+			[
+				"proteineval.cpp",
+				"src/ProteinEvaluator.cpp"
+			],
+			[
+				"protei",
+				"include/ProteinEvaluator.h"
+			],
+			[
+				"io.cpp",
+				"src/aux/io.cpp"
+			],
+			[
+				"auxio",
+				"include/aux/io.h"
+			],
+			[
+				"aux.",
+				"include/aux.h"
+			],
+			[
+				"main",
+				"src/main.cpp"
+			],
+			[
+				"protin4j",
+				"src/proteinEval4Java.cpp"
+			],
+			[
+				"protecmd",
+				"include/ProteinCmdEvaluator.h"
+			],
+			[
+				"proteincm",
+				"src/ProteinCmdEvaluator.cpp"
+			],
+			[
+				"ener",
+				"src/Energies.cpp"
+			],
+			[
+				"psp",
+				"include/PSP.h"
+			],
+			[
+				"protein",
+				"include/protein.h"
+			],
+			[
+				"project",
+				"proteinEval4JavaCdl.sublime-project"
+			],
+			[
+				"cmdeval.h",
+				"include/ProteinCmdEvaluator.h"
+			],
+			[
+				"proteincmd",
+				"src/ProteinCmdEvaluator.cpp"
+			],
+			[
+				"proteineva",
+				"include/ProteinEvaluator.h"
+			],
+			[
+				"proteineva.h",
+				"include/proteinEval4Java.h"
+			],
+			[
+				"proteineval",
+				"src/proteinEval4Java.cpp"
+			],
+			[
+				"",
+				"src/ProteinCmdEvaluator.cpp"
+			],
+			[
+				"proteineval4",
+				"src/proteinEval4Java.cpp"
+			],
+			[
+				"proteeva",
+				"src/ProteinEvaluator.cpp"
+			],
+			[
+				"cmdeva",
+				"src/ProteinCmdEvaluator.cpp"
+			],
+			[
+				"evalua",
+				"include/ProteinCmdEvaluator.h"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/projects/proteinEval4JavaCdl/proteinEval4JavaCdl.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 33.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"_vintageous_last_buffer_search": "jitt",
+		"_vintageous_last_buffer_search_command": "vi_slash",
+		"_vintageous_reset_during_init": true,
+		"vintage":
+		{
+			"_cmdline_cd": "/home/lucasmp/Desktop/unicentro/redes/aulas.md/prova1"
+		}
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 294.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
