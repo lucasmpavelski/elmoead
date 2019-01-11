@@ -1,6 +1,8 @@
 #include "adp.h"
 #include "format.h"
 
+#include <vector>
+
 void AirfoilDesignProblem::evaluate(const double x[], double y[])
 {
     //cerr << printSeq(x, x + noVars()) << endl;

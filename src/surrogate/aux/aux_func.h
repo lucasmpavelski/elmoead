@@ -3,7 +3,8 @@
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
-
+#include <numeric>
+#include <functional>
 
 template<typename Itr1, typename Itr2, typename T>
 bool contain(Itr1 beg, Itr2 end, const T& val)

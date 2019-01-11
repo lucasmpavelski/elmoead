@@ -19,7 +19,7 @@ private:
     size_t no_partitions;
     size_t no_weights;
     Type   mtype;
-    const double eps;
+    double eps;
 
 public:
     matrix weights;

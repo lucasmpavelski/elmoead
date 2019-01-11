@@ -18,6 +18,8 @@ set_property(GLOBAL APPEND PROPERTY
 ######### DEPENDENCIES #########
 
 # gtest
+option(BUILD_GTEST ON)
+option(BUILD_GMOCK OFF)
 add_subdirectory(lib/gtest)
 include_directories(lib/gtest)
 
@@ -34,9 +36,10 @@ include_directories(lib/cppformat)
 add_subdirectory(lib/cppformat)
 
 # inireader
+#include_directories(lib/inireader)
+#add_subdirectory(lib/inireader)
 include_directories(lib/inireader)
-add_subdirectory(lib/inireader)
-
+add_library(inireader STATIC lib/inireader/INIReader.h lib/inireader/INIReader.cpp lib/inireader/ini.h lib/inireader/ini.c)
 
 
 ######### EXECUTABLES #########
@@ -53,4 +56,4 @@ target_link_libraries(moead_alg surrogate hv)
 
 # test
 add_executable(test_all src/test/test_all.cpp)
-target_link_libraries(test_all gtest gtest_main hv surrogate)
+target_link_libraries(test_all gtest gtest_main hv surrogate pthread)

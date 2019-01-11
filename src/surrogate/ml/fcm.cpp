@@ -1,5 +1,6 @@
 #include "fcm.h"
-
+#include <vector>
+#include <numeric>
 
 void FuzzyCMeans::resetCenters(const FuzzyCMeans::vector &lb,
                                const FuzzyCMeans::vector &ub)

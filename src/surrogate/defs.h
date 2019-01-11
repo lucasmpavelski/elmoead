@@ -20,6 +20,7 @@ using std::endl;
 #include <string>
 #include <sstream>
 #include <algorithm>
+#include <vector>
 
 #include "Eigen/Core"
 
